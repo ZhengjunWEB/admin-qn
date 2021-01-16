@@ -1,0 +1,37 @@
+.el-input,
+.el-select {
+    width: 62%;
+}
+.el-date-editor--daterange.el-input__inner {
+    width: 65%;
+}
+.el-pagination {
+    text-align: center;
+    .el-input--mini .el-input__inner {
+        height: 22px !important;
+        line-height: 22px !important;
+    }
+}
+.el-select {
+    margin-left: 5px;
+    .el-input {
+        width: 100%;
+    }
+}
+.el-date-editor .el-range-input {
+    width: 70%;
+}
+.el-table {
+    th {
+        background-color: #f5f7fa;
+    }
+    .cell {
+        text-align: center;
+    }
+}
+.handle-button {
+    display: none;
+}
+.sidebar-container {
+    padding-bottom: 80px;
+}

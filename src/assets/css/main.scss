@@ -1,0 +1,25 @@
+.searchBox {
+    padding-bottom: 10px;
+  .searchBoxIn {
+    margin-top: 15px;
+  padding: 0 10px;
+  .title {
+    display: inline-block;
+    color: #666;
+    margin-left: 5px;
+    width: 70px;
+    font-size: 14px;
+  }
+  .el-row {
+    + .el-row {
+      margin-top: 10px;
+    }
+    .el-button {
+        margin-right: 15px;
+    }
+  }
+  }
+}
+.bor {
+    border-bottom: 6px solid #dddfe7;
+}
