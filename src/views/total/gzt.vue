@@ -81,6 +81,12 @@
                <div class="title">
             <span>公告信息</span>
                </div>
+               <ul>
+                 <li>商家工作台财务管理模块升级通知</li>
+                 <li>受台风影响海南省包裹延误通知</li>
+                 <li>受停航影响海南省包裹延误通知</li>
+                 <li>受台风影响海南省包裹延误通知</li>
+               </ul>
           </div>
       </el-col>
     </el-row>
@@ -259,6 +265,17 @@ export default {
     span {
       padding-left: 15px;
       display: inline-block;
+    }
+  }
+  ul {
+    li {
+      cursor: pointer;
+      line-height: 2;
+      color: #666;
+      font-size: 14px;
+      &:hover {
+        background-color: rgba(60,110,240,.1);
+      }
     }
   }
 }

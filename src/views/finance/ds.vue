@@ -4,7 +4,6 @@
       <div class="but">
         <el-button size="mini" @click="change(1)" :class="{'active': active== 1}" type="primary" plain>待处理</el-button>
       <el-button size="mini" @click="change(2)" :class="{'active': active== 2}" type="primary" plain>全部</el-button>
-      <el-button size="mini" @click="change(3)" :class="{'active': active== 3}" type="primary" plain>代收抵扣单</el-button>
       </div>
     </el-row>
           <div class="searchBoxIn">
@@ -31,16 +30,6 @@
       </el-col>
     </el-row>
     </div>
-    <div v-if="active == 1">
-    <div class="ddz">
-      <p>待对账</p>
-      <span>应收实际金额：1838</span>
-    </div>
-        <div class="ddz">
-      <p>待支付</p>
-      <span>应收实际金额：0</span>
-    </div>
-    </div>
     <el-row v-if="active == 2">
       <div class="searchBoxIn">
         <el-col :span="8">状态：  <el-select size="mini" v-model="value6" placeholder="请选择">
@@ -51,9 +40,6 @@
       :value="item.value">
     </el-option>
   </el-select></el-col>
-        <el-col :span="8">
-          费用科目：<el-input size="mini" v-model="input" placeholder="请输入内容"></el-input>
-        </el-col>
       </div>
     </el-row>
         <el-row v-if="active == 3">

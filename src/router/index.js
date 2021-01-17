@@ -88,8 +88,8 @@ export const constantRoutes = [
       },
       {
         path: 'page',
-        component: () => import('@/views/permission/page'),
-        name: 'PagePermission',
+        component: () => import('@/views/total/sjkb'),
+        name: 'sjkb',
         meta: {
           title: '数据看板', icon: 'dashboard'
         }
@@ -235,7 +235,13 @@ export const constantRoutes = [
         path: 'zd',
         component: () => import('@/views/finance/zd'),
         name: 'zd',
-        meta: { title: '账单列表', icon: 'dashboard', affix: true }
+        meta: { title: '应付账单', icon: 'dashboard', affix: true }
+      },
+      {
+        path: 'ds',
+        component: () => import('@/views/finance/ds'),
+        name: 'ds',
+        meta: { title: '代收货款管理', icon: 'dashboard', affix: true }
       }
     ]
   }
