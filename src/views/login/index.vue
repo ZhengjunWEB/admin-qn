@@ -3,8 +3,9 @@
     <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
 
       <div class="title-container">
+        <img class="dn" src="~@/assets/img/dn.svg" alt="">
         <h3 class="title">
-          {{ $t('login.title') }}
+        斗牛管家
         </h3>
         <lang-select class="set-language" />
       </div>
@@ -15,6 +16,7 @@
         </span>
         <el-input
           ref="username"
+          size="mini"
           v-model="loginForm.username"
           :placeholder="$t('login.username')"
           name="username"
@@ -32,6 +34,7 @@
           <el-input
             :key="passwordType"
             ref="password"
+            size="mini"
             v-model="loginForm.password"
             :type="passwordType"
             :placeholder="$t('login.password')"
@@ -52,7 +55,7 @@
         {{ $t('login.logIn') }}
       </el-button>
 
-      <div style="position:relative">
+      <!-- <div style="position:relative">
         <div class="tips">
           <span>{{ $t('login.username') }} : admin</span>
           <span>{{ $t('login.password') }} : {{ $t('login.any') }}</span>
@@ -67,7 +70,7 @@
         <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
           {{ $t('login.thirdparty') }}
         </el-button>
-      </div>
+      </div> -->
     </el-form>
 
     <el-dialog :title="$t('login.thirdparty')" :visible.sync="showDialog">
@@ -105,8 +108,8 @@ export default {
     }
     return {
       loginForm: {
-        username: 'admin',
-        password: '111111'
+        username: '',
+        password: ''
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -224,9 +227,13 @@ $cursor: #fff;
 
 /* reset element-ui css */
 .login-container {
+  .el-form-item {
+    background-color: #fff !important;
+    border: 1px solid #d9d9d9 !important;
+  }
   .el-input {
     display: inline-block;
-    height: 47px;
+    height: 32px;
     width: 85%;
 
     input {
@@ -234,14 +241,15 @@ $cursor: #fff;
       border: 0px;
       -webkit-appearance: none;
       border-radius: 0px;
-      padding: 12px 5px 12px 15px;
+      padding: 5px 5px 5px 15px;
       color: $light_gray;
-      height: 47px;
-      caret-color: $cursor;
+      height: 32px;
+      caret-color: #333;
+    color: #333;
 
       &:-webkit-autofill {
         box-shadow: 0 0 0px 1000px $bg inset !important;
-        -webkit-text-fill-color: $cursor !important;
+        -webkit-text-fill-color: #333 !important;
       }
     }
   }
@@ -260,10 +268,20 @@ $bg:#2d3a4b;
 $dark_gray:#889aa4;
 $light_gray:#eee;
 
+.dn {
+  width: 50px;
+  height: 50px;
+  vertical-align: -12px;
+  margin-right: 5px;
+}
+.international {
+  display: none;
+}
 .login-container {
   min-height: 100%;
   width: 100%;
-  background-color: $bg;
+  background: url('~@/assets/img/bigbg.svg') no-repeat;
+  background-size: 100%;
   overflow: hidden;
 
   .login-form {
@@ -288,7 +306,7 @@ $light_gray:#eee;
   }
 
   .svg-container {
-    padding: 6px 5px 6px 15px;
+    padding: 2px 5px 2px 15px;
     color: $dark_gray;
     vertical-align: middle;
     width: 30px;
@@ -297,6 +315,11 @@ $light_gray:#eee;
 
   .title-container {
     position: relative;
+    text-align: center;
+    h3 {
+      display: inline-block;
+      color: rgba(0,0,0,.85) !important;
+    }
 
     .title {
       font-size: 26px;
