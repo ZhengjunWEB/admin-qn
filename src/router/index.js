@@ -74,7 +74,7 @@ export const constantRoutes = [
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    name:'home',
+    name: 'home',
     meta: {
       title: '数据总览',
       icon: 'lock'
@@ -91,7 +91,7 @@ export const constantRoutes = [
         component: () => import('@/views/permission/page'),
         name: 'PagePermission',
         meta: {
-          title: '数据看板',icon: 'dashboard'
+          title: '数据看板', icon: 'dashboard'
         }
       }
     ]
@@ -100,7 +100,7 @@ export const constantRoutes = [
   {
     path: '/order',
     component: Layout,
-    name:'home',
+    name: 'home',
     meta: {
       title: '订单管理',
       icon: 'lock'
@@ -123,7 +123,7 @@ export const constantRoutes = [
         component: () => import('@/views/order/orderbatch'),
         name: 'orderbatch',
         meta: {
-          title: '批量列表',icon: 'dashboard'
+          title: '批量列表', icon: 'dashboard'
         }
       },
       {
@@ -131,7 +131,7 @@ export const constantRoutes = [
         component: () => import('@/views/order/ordererror'),
         name: 'ordererror',
         meta: {
-          title: '异常件列表',icon: 'dashboard'
+          title: '异常件列表', icon: 'dashboard'
         }
       }
     ]
@@ -140,7 +140,7 @@ export const constantRoutes = [
   {
     path: '/shop',
     component: Layout,
-    name:'shop',
+    name: 'shop',
     meta: {
       title: '店铺管理',
       icon: 'lock'
@@ -158,7 +158,7 @@ export const constantRoutes = [
   {
     path: '/statistics',
     component: Layout,
-    name:'statistics',
+    name: 'statistics',
     meta: {
       title: '统计报表',
       icon: 'lock'
@@ -175,7 +175,7 @@ export const constantRoutes = [
         component: () => import('@/views/statistics/ydyc'),
         name: 'statisticsydyc',
         meta: {
-          title: '运单异常统计',icon: 'dashboard'
+          title: '运单异常统计', icon: 'dashboard'
         }
       },
       {
@@ -183,7 +183,7 @@ export const constantRoutes = [
         component: () => import('@/views/statistics/dshk'),
         name: 'statisticsdshk',
         meta: {
-          title: '代收货款统计',icon: 'dashboard'
+          title: '代收货款统计', icon: 'dashboard'
         }
       },
       {
@@ -191,23 +191,23 @@ export const constantRoutes = [
         component: () => import('@/views/statistics/ddxs'),
         name: 'statisticsddxs',
         meta: {
-          title: '订单销售统计',icon: 'dashboard'
+          title: '订单销售统计', icon: 'dashboard'
         }
-      },      {
+      }, {
         path: 'statisticsyctj',
         component: () => import('@/views/statistics/yctj'),
         name: 'statisticsyctj',
         meta: {
-          title: '异常处理统计',icon: 'dashboard'
+          title: '异常处理统计', icon: 'dashboard'
         }
       }
     ]
   },
   // 账号管理
   {
-    path: '/user',
+    path: '/account',
     component: Layout,
-    name:'/user',
+    name: '/account',
     meta: {
       title: '账号管理',
       icon: 'lock'
@@ -215,7 +215,7 @@ export const constantRoutes = [
     children: [
       {
         path: 'detail',
-        component: () => import('@/views/dashboard/index'),
+        component: () => import('@/views/account/detail'),
         name: 'datail',
         meta: { title: '账号详情', icon: 'dashboard', affix: true }
       }
@@ -223,22 +223,22 @@ export const constantRoutes = [
   },
   // 财务管理
   {
-    path: '/shop',
+    path: '/finance',
     component: Layout,
-    name:'home',
+    name: 'finance',
     meta: {
       title: '财务管理',
       icon: 'lock'
     },
     children: [
       {
-        path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
-        name: 'Dashboard',
+        path: 'zd',
+        component: () => import('@/views/finance/zd'),
+        name: 'zd',
         meta: { title: '账单列表', icon: 'dashboard', affix: true }
       }
     ]
-  },
+  }
 ]
 
 /**

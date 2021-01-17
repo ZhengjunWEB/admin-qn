@@ -24,6 +24,8 @@ import searchBox from './components/index'
 import './assets/css/elementui.scss'
 import './assets/css/main.scss'
 
+import mixins from './mixins/index'
+
 /**
  * If you don't want to use mock-server
  * you want to use MockJs for mock api
@@ -39,7 +41,8 @@ if (process.env.NODE_ENV === 'production') {
 
 Vue.use(searchBox)
 Vue.use(VCharts)
- 
+Vue.mixin(mixins)
+
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium', // set element-ui default size
   i18n: (key, value) => i18n.t(key, value)
