@@ -188,8 +188,7 @@ export default {
       padding-left: 10px;
       height: 80px;
       background: url('~@/assets/img/22.svg');
-      background-repeat: no-repeat;
-      background-size: 100% 100%;
+      background-size: cover;
       * {
           margin: 0;
           padding: 0;
@@ -204,17 +203,17 @@ export default {
   }
   .b {
       background: url('~@/assets/img/11.svg');
-      background-size: 100% 100%;
+      background-size: cover;
 
   }
   .c {
       background: url('~@/assets/img/33.svg');
-      background-size: 100% 100%;
+      background-size: cover;
 
   }
   .d {
       background: url('~@/assets/img/44.svg');
-      background-size: 100% 100%;
+      background-size: cover;
 
   }
   .active {
