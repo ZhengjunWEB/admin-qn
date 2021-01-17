@@ -21,6 +21,7 @@
                     <el-col :span="9"> <span class="title" style="width: 120px">真实店铺名称：:</span> <el-input v-model="input" size="mini" placeholder="请输入内容"></el-input></el-col>
                     <el-button style="margin-left:20px" icon="el-icon-search" size="mini" type="primary">搜索</el-button>
                     <el-button icon="el-icon-refresh-right" size="mini" >重置</el-button>
+                    <el-button icon="el-icon-plus" size="mini" type="primary" @click="changec" >新增</el-button>
                 </el-row>
             </div>
           </div>
@@ -51,6 +52,36 @@
           </div>
       </table-box>
       </div>
+      <el-dialog
+  title="提示"
+  :visible.sync="dialogVisible"
+  width="70%"
+  :before-close="handleClose">
+  <el-form :model="ruleForm" :rules="rules" ref="ruleForm" class="demo-ruleForm">
+  <el-form-item label="店铺名称" prop="name">
+    <el-input v-model="ruleForm.name"></el-input>
+  </el-form-item>
+    <el-form-item label="真实店铺名称" prop="zs">
+    <el-input v-model="ruleForm.zs"></el-input>
+  </el-form-item>
+    <el-form-item label="寄件地址" prop="dz">
+    <el-input v-model="ruleForm.dz"></el-input>
+  </el-form-item>
+    <el-form-item label="退回地址" prop="fh">
+    <el-input v-model="ruleForm.fh"></el-input>
+  </el-form-item>
+    <el-form-item label="店铺备注" prop="bz">
+    <el-input v-model="ruleForm.bz"></el-input>
+  </el-form-item>
+      <el-form-item label="状态推送地址" prop="ts">
+    <el-input v-model="ruleForm.ts"></el-input>
+  </el-form-item>
+</el-form>
+  <span slot="footer" class="dialog-footer">
+    <el-button @click="dialogVisible = false">取 消</el-button>
+    <el-button type="primary" @click="dialogVisible = false">确 定</el-button>
+  </span>
+</el-dialog>
   </div>
 </template>
 
@@ -59,12 +90,48 @@ export default {
     data() {
         return {
             active: 1,
-            value:''
+            value:'',
+            dialogVisible: false,
+                 ruleForm: {
+          name: '',
+        zs:'',
+        dz:'',
+        fh:'',
+        bz:'',
+        ts:''
+        },
+        rules: {
+          name: [
+            { required: true, message: '请输入活动名称', trigger: 'blur' },
+            { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          ],
+          region: [
+            { required: true, message: '请选择活动区域', trigger: 'change' }
+          ],
+          date1: [
+            { type: 'date', required: true, message: '请选择日期', trigger: 'change' }
+          ],
+          date2: [
+            { type: 'date', required: true, message: '请选择时间', trigger: 'change' }
+          ],
+          type: [
+            { type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change' }
+          ],
+          resource: [
+            { required: true, message: '请选择活动资源', trigger: 'change' }
+          ],
+          desc: [
+            { required: true, message: '请填写活动形式', trigger: 'blur' }
+          ]
+        }
         }
     },
 methods: {
     change(i) {
         this.active = i
+    },
+    changec() {
+        this.dialogVisible = true
     }
 }
 }

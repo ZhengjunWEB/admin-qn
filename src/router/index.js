@@ -73,7 +73,7 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    redirect: '/gzt',
     name: 'home',
     meta: {
       title: '数据总览',
@@ -81,9 +81,9 @@ export const constantRoutes = [
     },
     children: [
       {
-        path: 'dashboard',
-        component: () => import('@/views/dashboard/index'),
-        name: 'Dashboard',
+        path: 'gzt',
+        component: () => import('@/views/total/gzt'),
+        name: 'gzt',
         meta: { title: '工作台', icon: 'dashboard', affix: true }
       },
       {
